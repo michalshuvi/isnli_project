@@ -1,0 +1,2 @@
+cd /home/ML_courses/course_DBNLP/michalshuvi
+CUDA_VISIBLE_DEVICES=2 allennlp train small.jsonnet --include-package readers --include-package models  -s ./tmp -f
