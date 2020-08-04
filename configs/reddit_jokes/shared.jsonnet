@@ -1,16 +1,18 @@
 {
     "train_data_path": "datasets/reddit_jokes/reddit_jokes_train.jsonl",
+    "validation_data_path": "datasets/reddit_jokes/reddit_jokes_test.jsonl",
     "dataset_reader": {
         "type": "reddit_jokes",
         "pretrained_tokenizer": error "Must override dataset_reader.pretrained_tokenizer",
     },
     "model": {
-        "type": "isnli",
+        "type": "inli",
         "pretrained_hf_model_name": error "Must override model.pretrained_hf_model"
     },
     "data_loader": {
         "batch_sampler": {
             "type": "bucket",
+            "sorting_keys": ["label_and_first_sentence"],
             "batch_size": error "Must override data_loader.batch_sampler.batch_size"
         }
     },
